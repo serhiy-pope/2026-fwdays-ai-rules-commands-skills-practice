@@ -1,0 +1,19 @@
+---
+description: "Project context for the Slidev workshop repo (always apply)."
+globs: "**/*"
+alwaysApply: true
+---
+
+## Project context (read first)
+
+- **Project type**: Slidev workshop slide deck (Vue 3 + Slidev).
+- **Goal**: Teach **AI rules, commands, and skills practice** via slides + interactive demos.
+- **PRD**: Source of truth is `docs/PRD.md`.
+- **Key entrypoints**:
+  - Slides: `slides.md`
+  - Additional slides: `pages/*.md`
+  - Vue components for slides: `components/*.vue`
+  - Code snippets for import into slides: `snippets/*`
+  - Docs: `docs/*` (PRD lives here)
+- **Tech**: Node + npm, Slidev CLI (`npm run dev`, `npm run build`, `npm run export`)
+

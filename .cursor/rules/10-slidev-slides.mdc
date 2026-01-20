@@ -1,0 +1,32 @@
+---
+description: "Rules for authoring Slidev slides (syntax, frontmatter, layouts, animations, snippets)."
+globs: "{slides.md,pages/**/*.md,**/*.md}"
+alwaysApply: false
+---
+
+## Slidev slide authoring rules
+
+- **Slide boundaries**: use `---` on its own line to separate slides.
+- **Frontmatter**:
+  - Use YAML frontmatter at the top of a slide file as needed (theme, title, transition, layout, etc.).
+  - Keep frontmatter minimal and consistent; prefer repo defaults unless a slide truly needs overrides.
+- **Layouts**:
+  - Prefer built-in layouts (`center`, `two-cols`, `image-right`, etc.) before custom CSS.
+  - When using `two-cols`, keep content balanced and readable at typical projector resolutions.
+- **Animations / interactivity**:
+  - Prefer progressive disclosure (`v-click`, `v-after`) over dense walls of text.
+  - Use `v-motion` sparingly; avoid distracting motion that hurts comprehension.
+- **Notes**:
+  - Put presenter notes in the **last HTML comment block** of a slide.
+  - Notes should include speaking points and timing cues for workshops.
+- **Code blocks**:
+  - Prefer small, focused snippets; highlight relevant lines.
+  - If code is reused, store it under `snippets/` and import it instead of duplicating.
+- **External snippet import**:
+  - Use `<<< @/snippets/<file>#snippet` (with a `#region snippet` in the snippet file).
+- **Diagrams**:
+  - Use Mermaid/PlantUML where it improves clarity; keep diagrams readable and not overly complex.
+- **Accessibility**:
+  - Provide `alt` text for images.
+  - Avoid relying solely on color to convey meaning.
+
