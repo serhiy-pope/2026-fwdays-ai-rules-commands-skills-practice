@@ -1,0 +1,27 @@
+---
+description: "Vue component standards for Slidev embedded components."
+globs: "components/**/*.vue"
+alwaysApply: false
+---
+
+## Vue component standards (Slidev components)
+
+- **Vue version**: Vue 3 Composition API.
+- **SFC style**: Prefer `<script setup lang=\"ts\">`.
+- **Props**:
+  - Type props (TypeScript) whenever possible.
+  - Use `defineProps` and keep prop defaults explicit.
+  - Document non-obvious props with brief comments.
+- **State**:
+  - Prefer `ref` / `computed`.
+  - Avoid expensive work in render paths; compute once or memoize with `computed`.
+- **Styling**:
+  - Prefer UnoCSS utility attributes/classes as used in Slidev (`p=\"2\"`, `border=\"~\"`, etc.).
+  - Avoid large scoped `<style>` blocks unless necessary for slide-specific visuals.
+- **Naming**:
+  - File name: `PascalCase.vue` (e.g., `Counter.vue`).
+  - Component name (if needed): PascalCase.
+- **Reusability**:
+  - Keep components small and demo-friendly (workshop context).
+  - Avoid hard-coded magic numbers; expose via props where it improves teaching value.
+

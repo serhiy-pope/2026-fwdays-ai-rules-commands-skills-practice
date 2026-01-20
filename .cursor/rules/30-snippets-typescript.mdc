@@ -1,0 +1,26 @@
+---
+description: "Conventions for code snippets imported into slides."
+globs: "snippets/**/*.{ts,js}"
+alwaysApply: false
+---
+
+## Snippets conventions
+
+- **Purpose**: `snippets/` contains reusable code examples referenced from slides.
+- **Exports**:
+  - Prefer **named exports**.
+  - Keep functions small and focused for teaching.
+- **TypeScript**:
+  - Prefer `.ts` for new snippets.
+  - Keep types readable; avoid overly clever typing unless it is the lesson.
+- **Snippet regions**:
+  - When a snippet is imported into slides, wrap the imported section with:
+    - `// #region snippet`
+    - `// #endregion snippet`
+  - Keep the region minimal (only what the slide needs).
+- **Console / side effects**:
+  - Avoid side effects at module import time.
+  - If `console.log` is needed for a demo, keep it intentional and easy to remove.
+- **Consistency**:
+  - Match the repo’s module system (ESM) and formatting style.
+
