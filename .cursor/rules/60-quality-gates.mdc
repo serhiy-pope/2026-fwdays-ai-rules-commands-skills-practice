@@ -1,0 +1,21 @@
+---
+description: "Quality gates for workshop content: correctness, clarity, accessibility, performance."
+globs: "{slides.md,pages/**/*.md,components/**/*.vue,snippets/**/*.{ts,js},docs/**/*.md}"
+alwaysApply: false
+---
+
+## Quality gates (must hold)
+
+- **Correctness**:
+  - Code examples must compile/run when presented as runnable.
+  - Commands in docs must match `package.json` scripts.
+- **Clarity**:
+  - Prefer fewer concepts per slide; use progressive disclosure.
+  - Avoid excessive text density; optimize for workshop pacing.
+- **Accessibility**:
+  - Images must have `alt`.
+  - Avoid color-only cues; keep contrast reasonable.
+- **Performance**:
+  - Avoid heavy components or large inline assets that slow slide navigation.
+  - Prefer importing code from `snippets/` instead of repeating huge blocks.
+

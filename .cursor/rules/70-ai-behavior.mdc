@@ -1,0 +1,20 @@
+---
+description: "How the AI assistant should behave in this repo."
+globs: "**/*"
+alwaysApply: true
+---
+
+## AI behavior rules
+
+- **PRD-driven**: For non-trivial changes, consult `docs/PRD.md` and align suggestions with its goals.
+- **Minimize churn**:
+  - Prefer editing existing files over creating new ones.
+  - Avoid cosmetic refactors unless they directly improve clarity/teaching value.
+- **Ask when ambiguous**:
+  - If a change depends on workshop audience level, session length, or desired outcomes, ask before proceeding.
+- **Be explicit about file paths**:
+  - When referencing project artifacts, use correct relative paths (e.g., `docs/PRD.md`, `slides.md`).
+- **Preserve deployability**:
+  - Don’t break `npm run dev` / `npm run build`.
+  - Don’t change Netlify/Vercel config unless required.
+

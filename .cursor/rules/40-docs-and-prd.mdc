@@ -1,0 +1,18 @@
+---
+description: "Documentation rules: keep docs in docs/, PRD as source of truth, maintain README links."
+globs: "{docs/**/*.md,README.md}"
+alwaysApply: false
+---
+
+## Documentation rules
+
+- **Docs location**: Put project documentation under `docs/` (including PRDs).
+- **PRD is source of truth**:
+  - Before proposing significant scope changes, consult `docs/PRD.md`.
+  - Keep docs consistent with actual repo structure (paths, commands, features).
+- **README**:
+  - If a referenced doc path changes, update `README.md` links accordingly.
+- **Style**:
+  - Prefer clear headings and short sections.
+  - Avoid vague promises; write actionable, verifiable statements.
+

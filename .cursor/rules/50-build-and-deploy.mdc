@@ -1,0 +1,18 @@
+---
+description: "Build/export/deploy rules for Slidev (Netlify/Vercel, dist output)."
+globs: "{package.json,netlify.toml,vercel.json}"
+alwaysApply: false
+---
+
+## Build & deploy rules
+
+- **Commands** (from `package.json`):
+  - `npm run dev` (Slidev dev server)
+  - `npm run build` (build to `dist/`)
+  - `npm run export` (exports to PDF/PPTX/PNGs depending on Slidev config)
+- **Output**: production build output is `dist/`.
+- **Hosting**:
+  - Netlify: expects `dist/` and SPA redirects.
+  - Vercel: expects `dist/` and SPA rewrites to `index.html`.
+- **Do not** change deploy configs unless needed for a documented requirement; keep both Netlify and Vercel configs working.
+
