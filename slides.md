@@ -601,6 +601,12 @@ hide: false
 
 ---
 
+src: ./pages/skills-openai-slide-image.md
+hide: false
+---
+
+---
+
 # Monaco Editor
 
 Slidev provides built-in Monaco Editor support.
