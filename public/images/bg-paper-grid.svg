@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Light paper grid background">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#fbfbfd"/>
+    </linearGradient>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M 64 0 L 0 0 0 64" fill="none" stroke="#0f172a" stroke-opacity="0.055" stroke-width="1"/>
+      <path d="M 64 32 L 0 32" fill="none" stroke="#0f172a" stroke-opacity="0.03" stroke-width="1"/>
+      <path d="M 32 64 L 32 0" fill="none" stroke="#0f172a" stroke-opacity="0.03" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="vignette" cx="50%" cy="45%" r="80%">
+      <stop offset="0" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.08"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#paper)"/>
+  <rect width="1920" height="1080" fill="url(#grid)"/>
+  <rect width="1920" height="1080" fill="url(#vignette)"/>
+</svg>
