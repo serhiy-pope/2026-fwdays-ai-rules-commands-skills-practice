@@ -31,6 +31,14 @@ Repo: <code class="text-gray-700">2026-fwdays-ai-rules-commands-skills-practice<
 - Framing: We’re building reliability via contracts (rules), repeatable actions (commands), and practice loops (skills).
 -->
 
+<style>
+:global(.slidev-page),
+:global(.slidev-layout),
+:global(.slidev) {
+  cursor: none !important;
+}
+</style>
+
 ---
 layout: two-cols
 layoutClass: gap-10
