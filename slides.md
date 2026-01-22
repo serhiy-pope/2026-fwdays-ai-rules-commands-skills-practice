@@ -55,6 +55,87 @@ Repo: <code class="text-gray-700">2026-fwdays-ai-rules-commands-skills-practice<
   cursor: none !important;
 }
 
+:global(.slidev-layout) {
+  position: relative;
+}
+
+:global(.slidev-layout)::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.7;
+  background:
+    radial-gradient(1200px 700px at 15% 15%, rgba(99, 102, 241, 0.16), transparent 55%),
+    radial-gradient(900px 600px at 85% 25%, rgba(16, 185, 129, 0.14), transparent 55%),
+    radial-gradient(800px 600px at 70% 85%, rgba(236, 72, 153, 0.12), transparent 55%),
+    url('/images/bg-paper-grid.svg');
+  background-size: cover, cover, cover, 900px auto;
+  background-position: center, center, center, center;
+}
+
+:global(.slidev-layout > *) {
+  position: relative;
+  z-index: 1;
+}
+
+:global(.slidev-layout h2) {
+  letter-spacing: -0.02em;
+}
+
+:global(.slidev-layout h2) {
+  background: linear-gradient(90deg, rgba(30, 64, 175, 0.95), rgba(79, 70, 229, 0.95), rgba(16, 185, 129, 0.9));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+:global(.slidev-layout h3) {
+  letter-spacing: -0.01em;
+  color: rgba(15, 23, 42, 0.92);
+}
+
+:global(.slidev-layout ul > li) {
+  margin: 0.35rem 0;
+}
+
+:global(.slidev-layout blockquote) {
+  border-left: 4px solid rgba(99, 102, 241, 0.65);
+  padding-left: 0.9rem;
+  color: rgba(15, 23, 42, 0.88);
+}
+
+:global(.slidev-layout kbd) {
+  border: 1px solid rgba(15, 23, 42, 0.18);
+  border-bottom-width: 2px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.75);
+  padding: 0.15rem 0.35rem;
+}
+
+:global(.slidev-layout :not(pre) > code) {
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.66);
+  padding: 0.12rem 0.35rem;
+}
+
+.section-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.section-kicker .dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.9), rgba(16, 185, 129, 0.85));
+}
+
 .frame {
   border: 1px solid rgba(15, 23, 42, 0.18);
   border-radius: 16px;
@@ -91,19 +172,39 @@ layoutClass: gap-10
 
 ## Today’s map
 
-We’ll build a “prompting system” mindset:
+<div class="section-kicker mb-3">
+  <span class="dot" aria-hidden="true" />
+  <span>Orientation</span>
+</div>
 
-- **Rules**: constraints that shape behavior
-- **Commands**: repeatable actions you can ask for
-- **Skills**: practiced capabilities (with feedback)
+<div class="frame frame--subtle p-5">
+  <div class="badge mb-3 text-sm">
+    <span class="i-carbon:map icon text-lg" aria-hidden="true" />
+    <span>We’ll build a “prompting system” mindset</span>
+  </div>
+
+  <ul>
+    <li><b>Rules</b>: constraints that shape behavior</li>
+    <li><b>Commands</b>: repeatable actions you can ask for</li>
+    <li><b>Skills</b>: practiced capabilities (with feedback)</li>
+  </ul>
+</div>
 
 :::right::
 
 ### Outcomes (by the end)
 
-- Write 3 rules that prevent common failures
-- Use a small “command palette” to steer an agent
-- Practice a skill loop: attempt → critique → revise
+<div class="frame frame--subtle p-5">
+  <div class="badge mb-3 text-sm">
+    <span class="i-carbon:checkmark-outline icon text-lg" aria-hidden="true" />
+    <span>Outcomes</span>
+  </div>
+  <ul>
+    <li>Write 3 rules that prevent common failures</li>
+    <li>Use a small “command palette” to steer an agent</li>
+    <li>Practice a skill loop: attempt → critique → revise</li>
+  </ul>
+</div>
 
 :::
 
@@ -118,13 +219,17 @@ class: text-center
 
 ## Glossary (fast)
 
-<div class="mt-8 text-left max-w-2xl mx-auto">
-
-- **Rule**: always-on instruction (“must/never/always”)
-- **Command**: a callable action (“do X”, often with parameters)
-- **Skill**: a repeatable behavior you improve via practice
-- **Spec**: a shared contract that reduces ambiguity
-
+<div class="mt-8 text-left max-w-2xl mx-auto frame p-6">
+  <div class="badge mb-4 text-sm">
+    <span class="i-carbon:bookmark icon text-lg" aria-hidden="true" />
+    <span>Terms we’ll reuse</span>
+  </div>
+  <ul>
+    <li><b>Rule</b>: always-on instruction (“must/never/always”)</li>
+    <li><b>Command</b>: a callable action (“do X”, often with parameters)</li>
+    <li><b>Skill</b>: a repeatable behavior you improve via practice</li>
+    <li><b>Spec</b>: a shared contract that reduces ambiguity</li>
+  </ul>
 </div>
 
 <!--
@@ -160,6 +265,16 @@ background: /images/bg-paper-grid.svg
 
 ### Constraints that prevent failure modes
 
+<div class="mt-8 frame frame--subtle p-6 max-w-3xl mx-auto">
+  <div class="badge mb-3 text-sm">
+    <span class="i-carbon:shield icon text-lg" aria-hidden="true" />
+    <span>Think: guardrails</span>
+  </div>
+  <div class="text-sm opacity-90">
+    Rules are your “always-on” safety net: they prevent predictable failure modes and keep the agent inside the contract.
+  </div>
+</div>
+
 <!--
 - “Rules” are guardrails. They reduce cognitive load and stop predictable mistakes.
 -->
@@ -192,9 +307,17 @@ layoutClass: gap-10
 
 ## Three core rules (starter pack)
 
-- **Scope rule**: stay within provided files/data
-- **Uncertainty rule**: ask when ambiguous; don’t guess facts
-- **Verification rule**: validate outputs (lint/build/tests when relevant)
+<div class="frame frame--subtle p-5">
+  <div class="badge mb-3 text-sm">
+    <span class="i-carbon:stacked-move icon text-lg" aria-hidden="true" />
+    <span>Starter pack</span>
+  </div>
+  <ul>
+    <li><b>Scope rule</b>: stay within provided files/data</li>
+    <li><b>Uncertainty rule</b>: ask when ambiguous; don’t guess facts</li>
+    <li><b>Verification rule</b>: validate outputs (lint/build/tests when relevant)</li>
+  </ul>
+</div>
 
 <div v-click class="mt-6 text-sm opacity-80">
 These three cover most “agent went off the rails” stories.
@@ -204,9 +327,17 @@ These three cover most “agent went off the rails” stories.
 
 ### Failure modes they prevent
 
-- Hallucinated APIs/paths
-- Hidden assumptions
-- “Looks right” but broken output
+<div class="frame frame--subtle p-5">
+  <div class="badge mb-3 text-sm">
+    <span class="i-carbon:warning-alt icon text-lg" aria-hidden="true" />
+    <span>Prevents</span>
+  </div>
+  <ul>
+    <li>Hallucinated APIs/paths</li>
+    <li>Hidden assumptions</li>
+    <li>“Looks right” but broken output</li>
+  </ul>
+</div>
 
 :::
 
@@ -218,11 +349,12 @@ These three cover most “agent went off the rails” stories.
 
 ## Rule conflicts: decide a tie-breaker
 
-<div class="text-sm">
-Example: “Move fast” vs “Don’t break builds”
+<div class="badge text-sm">
+  <span class="i-carbon:arrows-horizontal icon text-lg" aria-hidden="true" />
+  <span>Example conflict: “Move fast” vs “Don’t break builds”</span>
 </div>
 
-<div v-click class="mt-5">
+<div v-click class="mt-5 frame frame--subtle p-5">
 
 Recommended priority:
 
@@ -267,6 +399,16 @@ background: /images/bg-paper-grid.svg
 
 ### Repeatable actions with parameters
 
+<div class="mt-8 frame frame--subtle p-6 max-w-3xl mx-auto">
+  <div class="badge mb-3 text-sm">
+    <span class="i-carbon:terminal icon text-lg" aria-hidden="true" />
+    <span>Think: repeatable actions</span>
+  </div>
+  <div class="text-sm opacity-90">
+    Commands turn vague intent into structured work. When the inputs + outputs are explicit, agents get dramatically more reliable.
+  </div>
+</div>
+
 <!--
 - “Commands” turn vague intent into structured work.
 -->
@@ -275,10 +417,18 @@ background: /images/bg-paper-grid.svg
 
 ## Command design: small, composable, explicit
 
-- **Name**: verb-first (`summarize`, `diff`, `plan`, `verify`)
-- **Inputs**: what the command needs (files, constraints, audience)
-- **Output contract**: what “done” looks like
-- **Failure behavior**: what happens if missing info
+<div class="frame frame--subtle p-5">
+  <div class="badge mb-3 text-sm">
+    <span class="i-carbon:function icon text-lg" aria-hidden="true" />
+    <span>Command = function call</span>
+  </div>
+  <ul>
+    <li><b>Name</b>: verb-first (<code>summarize</code>, <code>diff</code>, <code>plan</code>, <code>verify</code>)</li>
+    <li><b>Inputs</b>: what the command needs (files, constraints, audience)</li>
+    <li><b>Output contract</b>: what “done” looks like</li>
+    <li><b>Failure behavior</b>: what happens if missing info</li>
+  </ul>
+</div>
 
 <div v-click class="mt-5 text-sm opacity-80">
 Think: a command is a function call, not a wish.
@@ -295,6 +445,12 @@ layoutClass: gap-10
 
 ## Example: a “slide generator” command
 
+<div class="frame p-5">
+  <div class="badge mb-3 text-sm">
+    <span class="i-carbon:code icon text-lg" aria-hidden="true" />
+    <span>Command spec</span>
+  </div>
+
 ```md
 /make-slides
 - topic: "Rules, Commands, Skills"
@@ -306,14 +462,23 @@ layoutClass: gap-10
   - include 1 interactive demo
 - output: "replace slides.md"
 ```
+</div>
 
 :::right::
 
 ### Notes
 
-- Make parameters explicit
-- Pre-commit constraints
-- Declare output target
+<div class="frame frame--subtle p-5">
+  <div class="badge mb-3 text-sm">
+    <span class="i-carbon:idea icon text-lg" aria-hidden="true" />
+    <span>Design notes</span>
+  </div>
+  <ul>
+    <li>Make parameters explicit</li>
+    <li>Pre-commit constraints</li>
+    <li>Declare output target</li>
+  </ul>
+</div>
 
 :::
 
@@ -325,9 +490,14 @@ layoutClass: gap-10
 
 ## Code-as-command (reusable snippet)
 
-Import a reusable snippet instead of duplicating it:
+<div class="badge text-sm">
+  <span class="i-carbon:document-export icon text-lg" aria-hidden="true" />
+  <span>Import a reusable snippet instead of duplicating it</span>
+</div>
 
+<div class="mt-4 frame p-5">
 <<< @/snippets/external.ts#snippet
+</div>
 
 <div v-click class="mt-5 text-sm opacity-80">
 Rule of thumb: if you copy-paste it twice, it becomes a snippet.
@@ -341,6 +511,12 @@ Rule of thumb: if you copy-paste it twice, it becomes a snippet.
 
 ## Command chain: “plan → execute → verify”
 
+<div class="badge text-sm mb-4">
+  <span class="i-carbon:flow icon text-lg" aria-hidden="true" />
+  <span>Make the workflow visible</span>
+</div>
+
+<div class="frame p-5">
 ```mermaid {scale: 0.9, alt: 'A simple workflow diagram showing a plan, execute, verify loop'}
 flowchart LR
   A[Plan] --> B[Execute]
@@ -348,6 +524,7 @@ flowchart LR
   C -->|pass| D[Done]
   C -->|fail| A
 ```
+</div>
 
 <!--
 - Verification is what makes agentic workflows safe.
@@ -359,7 +536,13 @@ flowchart LR
 
 Use Vue components inline:
 
-<Counter :count="3" class="mt-6" />
+<div class="mt-6 frame frame--subtle p-6">
+  <div class="badge mb-3 text-sm">
+    <span class="i-carbon:touch-1 icon text-lg" aria-hidden="true" />
+    <span>Interactive demo</span>
+  </div>
+  <Counter :count="3" />
+</div>
 
 <div v-click class="mt-6 text-sm opacity-80">
 Commands often map to UI demos: “increase”, “decrease”, “reset”.
@@ -379,6 +562,16 @@ background: /images/bg-paper-grid.svg
 ## Module 3 — Skills
 
 ### Practice loops that make you (and the agent) better
+
+<div class="mt-8 frame frame--subtle p-6 max-w-3xl mx-auto">
+  <div class="badge mb-3 text-sm">
+    <span class="i-carbon:cycle icon text-lg" aria-hidden="true" />
+    <span>Think: feedback loops</span>
+  </div>
+  <div class="text-sm opacity-90">
+    Skills are what you practice: attempt, critique, revise — with proof. That’s how “prompting” becomes a capability.
+  </div>
+</div>
 
 <!--
 - “Skills” are what you train: writing specs, debugging, summarizing, refactoring.
@@ -427,11 +620,19 @@ hide: false
 
 Good specs include:
 
-- **Goal**
-- **Non-goals**
-- **Inputs/outputs**
-- **Constraints**
-- **Acceptance criteria**
+<div class="frame frame--subtle p-5">
+  <div class="badge mb-3 text-sm">
+    <span class="i-carbon:document icon text-lg" aria-hidden="true" />
+    <span>Spec checklist</span>
+  </div>
+  <ul>
+    <li><b>Goal</b></li>
+    <li><b>Non-goals</b></li>
+    <li><b>Inputs/outputs</b></li>
+    <li><b>Constraints</b></li>
+    <li><b>Acceptance criteria</b></li>
+  </ul>
+</div>
 
 <div v-click class="mt-6 frame p-4 text-sm">
 If you can’t write acceptance criteria, you can’t reliably evaluate the model’s output.
@@ -447,11 +648,19 @@ If you can’t write acceptance criteria, you can’t reliably evaluate the mode
 
 When blocked, ask:
 
-- **Which option do you want?** (A/B choices)
-- **What matters more?** (speed vs accuracy vs cost)
-- **What’s the success criteria?**
+<div class="frame frame--subtle p-5">
+  <div class="badge mb-3 text-sm">
+    <span class="i-carbon:help icon text-lg" aria-hidden="true" />
+    <span>High-signal questions</span>
+  </div>
+  <ul>
+    <li><b>Which option do you want?</b> (A/B choices)</li>
+    <li><b>What matters more?</b> (speed vs accuracy vs cost)</li>
+    <li><b>What’s the success criteria?</b></li>
+  </ul>
+</div>
 
-<div v-click class="mt-6 text-sm opacity-80">
+<div v-click class="mt-6 frame p-4 text-sm">
 Avoid: “Any other details?” — it’s too vague to be helpful.
 </div>
 
@@ -465,9 +674,17 @@ Avoid: “Any other details?” — it’s too vague to be helpful.
 
 Pick the right “proof”:
 
-- Docs change → link check / consistency check
-- Code change → typecheck/lint/tests/build
-- Slides change → `npm run build` to confirm exportability
+<div class="frame frame--subtle p-5">
+  <div class="badge mb-3 text-sm">
+    <span class="i-carbon:checkmark-outline icon text-lg" aria-hidden="true" />
+    <span>Choose a proof</span>
+  </div>
+  <ul>
+    <li>Docs change → link check / consistency check</li>
+    <li>Code change → typecheck/lint/tests/build</li>
+    <li>Slides change → <code>npm run build</code> to confirm exportability</li>
+  </ul>
+</div>
 
 <!--
 - Verification is part of the skill, not an afterthought.
@@ -502,10 +719,18 @@ level: 2
 
 ## Best practices (quick hits)
 
-- **Prefer constraints over vibes**
-- **Prefer small changes over large refactors**
-- **Keep artifacts close to code** (`docs/`, `snippets/`, `components/`)
-- **Make failures loud** (build steps, checks, assertions)
+<div class="frame frame--subtle p-6 max-w-3xl">
+  <div class="badge mb-4 text-sm">
+    <span class="i-carbon:favorite icon text-lg" aria-hidden="true" />
+    <span>Habits that compound</span>
+  </div>
+  <ul>
+    <li><b>Prefer constraints</b> over vibes</li>
+    <li><b>Prefer small changes</b> over large refactors</li>
+    <li><b>Keep artifacts close to code</b> (<code>docs/</code>, <code>snippets/</code>, <code>components/</code>)</li>
+    <li><b>Make failures loud</b> (build steps, checks, assertions)</li>
+  </ul>
+</div>
 
 <!--
 - Reinforce repo norms: PRD-driven, minimize churn.
@@ -521,8 +746,19 @@ background: /images/bg-aurora-light.svg
 
 ### Rules → Commands → Skills
 
-<div class="mt-8 text-sm opacity-80">
-Next step: take one workflow this week and write (1) 3 rules, (2) 5 commands, (3) a 20-minute practice loop.
+<div class="mt-10 frame frame--subtle p-6 max-w-3xl mx-auto text-left">
+  <div class="badge mb-3 text-sm">
+    <span class="i-carbon:rocket icon text-lg" aria-hidden="true" />
+    <span>Next step</span>
+  </div>
+  <div class="text-sm opacity-90">
+    Take one workflow this week and write:
+    <ul class="mt-3">
+      <li><b>3 rules</b> (prevent the top failure modes)</li>
+      <li><b>5 commands</b> (a tiny command palette)</li>
+      <li><b>20-minute practice loop</b> (attempt → critique → revise)</li>
+    </ul>
+  </div>
 </div>
 
 <!--
