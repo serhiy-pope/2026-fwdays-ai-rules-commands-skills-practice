@@ -4,7 +4,7 @@ title: AI Rules, Commands, Skills — Practice Workshop
 info: |
   ## AI Rules · Commands · Skills
   A practical workshop deck for building reliable AI-assisted workflows.
-transition: fade-out
+transition: none
 mdc: true
 duration: 60min
 background: /images/bg-aurora-light.svg
@@ -12,7 +12,7 @@ background: /images/bg-aurora-light.svg
 
 <div class="text-center">
 
-<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border bg-white/70 backdrop-blur text-sm">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border bg-white/70 backdrop-blur text-sm text-slate-800">
   <span class="i-carbon:checkmark text-lg" aria-hidden="true" />
   <span>Reliable AI workflows</span>
   <span class="opacity-50">·</span>
@@ -49,17 +49,17 @@ Repo: <code class="text-gray-700">2026-fwdays-ai-rules-commands-skills-practice<
 -->
 
 <style>
-:global(.slidev-page),
-:global(.slidev-layout),
-:global(.slidev) {
+.slidev-page,
+.slidev-layout,
+.slidev {
   cursor: none !important;
 }
 
-:global(.slidev-layout) {
+.slidev-layout {
   position: relative;
 }
 
-:global(.slidev-layout)::before {
+.slidev-layout::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -75,38 +75,38 @@ Repo: <code class="text-gray-700">2026-fwdays-ai-rules-commands-skills-practice<
   background-position: center, center, center, center;
 }
 
-:global(.slidev-layout > *) {
+.slidev-layout > * {
   position: relative;
   z-index: 1;
 }
 
-:global(.slidev-layout h2) {
+.slidev-layout h2 {
   letter-spacing: -0.02em;
 }
 
-:global(.slidev-layout h2) {
+.slidev-layout h2 {
   background: linear-gradient(90deg, rgba(30, 64, 175, 0.95), rgba(79, 70, 229, 0.95), rgba(16, 185, 129, 0.9));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-:global(.slidev-layout h3) {
+.slidev-layout h3 {
   letter-spacing: -0.01em;
   color: rgba(15, 23, 42, 0.92);
 }
 
-:global(.slidev-layout ul > li) {
+.slidev-layout ul > li {
   margin: 0.35rem 0;
 }
 
-:global(.slidev-layout blockquote) {
+.slidev-layout blockquote {
   border-left: 4px solid rgba(99, 102, 241, 0.65);
   padding-left: 0.9rem;
   color: rgba(15, 23, 42, 0.88);
 }
 
-:global(.slidev-layout kbd) {
+.slidev-layout kbd {
   border: 1px solid rgba(15, 23, 42, 0.18);
   border-bottom-width: 2px;
   border-radius: 8px;
@@ -114,7 +114,7 @@ Repo: <code class="text-gray-700">2026-fwdays-ai-rules-commands-skills-practice<
   padding: 0.15rem 0.35rem;
 }
 
-:global(.slidev-layout :not(pre) > code) {
+.slidev-layout :not(pre) > code {
   border: 1px solid rgba(15, 23, 42, 0.12);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.66);
