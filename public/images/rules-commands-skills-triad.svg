@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Rules, Commands, Skills triad</title>
+  <desc id="desc">A triangular diagram connecting Rules, Commands, and Skills, each with a short explanatory label.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#60a5fa" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#34d399" stop-opacity="0.9"/>
+    </linearGradient>
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+    <style>
+      .label { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; fill: #e5e7eb; }
+      .title { font-size: 44px; font-weight: 800; letter-spacing: 0.4px; }
+      .nodeTitle { font-size: 34px; font-weight: 800; }
+      .nodeBody { font-size: 22px; opacity: 0.92; }
+      .small { font-size: 18px; opacity: 0.75; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="1200" height="800" rx="28" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text class="label title" x="80" y="110">Rules · Commands · Skills</text>
+  <text class="label small" x="80" y="150">A simple contract model for reliable AI-assisted work</text>
+
+  <!-- Triangle edges -->
+  <path d="M 600 220 L 260 640 L 940 640 Z" fill="none" stroke="url(#edge)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+
+  <!-- Edges captions -->
+  <text class="label small" x="430" y="430">constraints → actions</text>
+  <text class="label small" x="720" y="430" text-anchor="end">actions → practice</text>
+  <text class="label small" x="600" y="690" text-anchor="middle">practice → better rules</text>
+
+  <!-- Nodes -->
+  <g filter="url(#softShadow)">
+    <!-- Rules -->
+    <circle cx="600" cy="220" r="88" fill="#0f172a" stroke="#60a5fa" stroke-width="6"/>
+    <text class="label nodeTitle" x="600" y="215" text-anchor="middle">Rules</text>
+    <text class="label nodeBody" x="600" y="250" text-anchor="middle">Guardrails</text>
+
+    <!-- Commands -->
+    <circle cx="260" cy="640" r="88" fill="#0f172a" stroke="#a78bfa" stroke-width="6"/>
+    <text class="label nodeTitle" x="260" y="635" text-anchor="middle">Commands</text>
+    <text class="label nodeBody" x="260" y="670" text-anchor="middle">Repeatable</text>
+
+    <!-- Skills -->
+    <circle cx="940" cy="640" r="88" fill="#0f172a" stroke="#34d399" stroke-width="6"/>
+    <text class="label nodeTitle" x="940" y="635" text-anchor="middle">Skills</text>
+    <text class="label nodeBody" x="940" y="670" text-anchor="middle">Practice loop</text>
+  </g>
+
+  <!-- Callouts -->
+  <g>
+    <rect x="705" y="250" width="420" height="115" rx="16" fill="#0b1326" stroke="#60a5fa" stroke-opacity="0.5"/>
+    <text class="label nodeBody" x="728" y="295">Rules define constraints:</text>
+    <text class="label small" x="728" y="328">what must/never happen; what to do when uncertain</text>
+
+    <rect x="55" y="475" width="420" height="115" rx="16" fill="#0b1326" stroke="#a78bfa" stroke-opacity="0.5"/>
+    <text class="label nodeBody" x="78" y="520">Commands define actions:</text>
+    <text class="label small" x="78" y="553">inputs, outputs, failure behavior</text>
+
+    <rect x="705" y="475" width="420" height="115" rx="16" fill="#0b1326" stroke="#34d399" stroke-opacity="0.5"/>
+    <text class="label nodeBody" x="728" y="520">Skills define improvement:</text>
+    <text class="label small" x="728" y="553">attempt → critique → revise (then verify)</text>
+  </g>
+</svg>

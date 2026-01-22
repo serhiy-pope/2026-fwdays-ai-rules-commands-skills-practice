@@ -4,9 +4,10 @@ title: AI Rules, Commands, Skills — Practice Workshop
 info: |
   ## AI Rules · Commands · Skills
   A practical workshop deck for building reliable AI-assisted workflows.
-transition: slide-left
+transition: fade-out
 mdc: true
 duration: 60min
+background: /images/bg-aurora-light.svg
 ---
 
 <div class="text-center">
@@ -20,7 +21,7 @@ Use <kbd>Space</kbd> / <kbd>→</kbd> to advance · <kbd>Shift</kbd>+<kbd>Space<
 </div>
 
 <div class="mt-6 text-xs opacity-70">
-Repo: <code>2026-fwdays-ai-rules-commands-skills-practice</code>
+Repo: <code class="text-gray-700">2026-fwdays-ai-rules-commands-skills-practice</code>
 </div>
 
 </div>
@@ -93,6 +94,7 @@ level: 2
 layout: center
 class: text-center
 level: 2
+background: /images/bg-paper-grid.svg
 ---
 
 ## Module 1 — Rules
@@ -199,6 +201,7 @@ Deliverable: 3 rules with a measurable fallback (e.g., “ask a question”, “
 layout: center
 class: text-center
 level: 2
+background: /images/bg-paper-grid.svg
 ---
 
 ## Module 2 — Commands
@@ -311,6 +314,7 @@ Commands often map to UI demos: “increase”, “decrease”, “reset”.
 layout: center
 class: text-center
 level: 2
+background: /images/bg-paper-grid.svg
 ---
 
 ## Module 3 — Skills
@@ -343,6 +347,11 @@ level: 2
 <!--
 - This is how you turn “prompting” into a real capability.
 -->
+
+---
+src: ./pages/skills-architecture.md
+hide: false
+---
 
 ---
 
@@ -437,6 +446,7 @@ level: 2
 ---
 layout: center
 class: text-center
+background: /images/bg-aurora-light.svg
 ---
 
 ## Wrap-up
