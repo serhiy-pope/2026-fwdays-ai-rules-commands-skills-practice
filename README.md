@@ -2,8 +2,8 @@
 
 To start the slide show:
 
-- `pnpm install`
-- `pnpm dev`
+- `npm ci`
+- `npm run dev`
 - visit <http://localhost:3030>
 
 Edit the [slides.md](./slides.md) to see the changes.
@@ -13,6 +13,11 @@ Learn more about Slidev at the [documentation](https://sli.dev/).
 ## Documentation
 
 - [Product Requirements Document (PRD)](./docs/PRD.md) - Comprehensive project requirements and specifications
+
+## GitHub Pages (GitHub Actions)
+
+- **Repo setting required**: `Settings → Pages → Build and deployment → Source: GitHub Actions`
+- **Deploy workflow**: `.github/workflows/deploy-pages.yml` (runs on pushes to `main`)
 
 ## Cursor Commands
 
