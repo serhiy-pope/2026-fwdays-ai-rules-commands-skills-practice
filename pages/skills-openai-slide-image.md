@@ -1,17 +1,34 @@
 ---
-layout: image-right
-image: /images/REPLACE_ME.png
+layout: two-cols
+layoutClass: gap-10
 ---
 
-# Cursor Skill: OpenAI slide image
+# One generated image (local asset)
 
-- This slide is designed to be paired with the Cursor skill in `.cursor/skills/openai-slide-image/`.
-- Generate an image with:
-  - `node scripts/create-slide-with-openai-image.mjs --title "Cursor Skill: OpenAI slide image" --prompt "..."`  
-- Then update this slide’s `image:` field to the generated `/images/<file>.png`.
+This deck includes **one generated image** to illustrate the core triad:
+
+- **Rules**: constraints
+- **Commands**: actions
+- **Skills**: practice loops
+
+<div class="mt-6 text-sm opacity-80">
+This image is stored locally under <code>public/images/</code> to keep the deck reliable offline.
+</div>
+
+:::right::
+
+<img
+  src="/images/rules-commands-skills-triad.svg"
+  alt="A triangular diagram connecting Rules, Commands, and Skills, with short labels explaining each concept."
+  class="w-full rounded border"
+/>
+
+:::
 
 <!--
 Speaker notes:
-- Demo the skill/script: generate an image, then refresh Slidev to show it.
+- If you want an AI-generated PNG instead, you can use the script:
+  - `node scripts/create-slide-with-openai-image.mjs --title "Rules, Commands, Skills" --prompt "A clean minimal diagram showing Rules, Commands, Skills..." `
+- Then replace the <img> `src` with the generated `/images/<file>.png`.
 -->
 
