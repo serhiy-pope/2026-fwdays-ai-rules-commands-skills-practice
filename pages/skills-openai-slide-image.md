@@ -1,6 +1,7 @@
 ---
 layout: two-cols
 layoutClass: gap-10
+background: /images/bg-paper-grid.svg
 ---
 
 # One generated image (local asset)

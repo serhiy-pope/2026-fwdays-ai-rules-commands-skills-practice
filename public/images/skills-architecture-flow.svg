@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Skills architecture flow</title>
+  <desc id="desc">A flow diagram: Inputs lead into Attempt, Critique, Revise, Verify, producing Output. Verify loops back to Attempt on failure.</desc>
+
+  <defs>
+    <style>
+      .t { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; fill: #0f172a; }
+      .h { font-size: 26px; font-weight: 800; }
+      .b { font-size: 18px; font-weight: 600; }
+      .s { font-size: 16px; opacity: 0.75; }
+    </style>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.18"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="760" rx="24" fill="#ffffff" opacity="0.92"/>
+
+  <text class="t h" x="60" y="80">Skills Architecture</text>
+  <text class="t s" x="60" y="112">Make skills concrete: loop + feedback + proof</text>
+
+  <!-- Nodes -->
+  <g filter="url(#shadow)">
+    <rect x="60" y="170" width="300" height="110" rx="16" fill="#f8fafc" stroke="#cbd5e1"/>
+    <text class="t b" x="90" y="215">Inputs</text>
+    <text class="t s" x="90" y="245">context · rules · tools</text>
+
+    <rect x="440" y="170" width="300" height="110" rx="16" fill="#f8fafc" stroke="#cbd5e1"/>
+    <text class="t b" x="470" y="215">Attempt</text>
+    <text class="t s" x="470" y="245">produce a first artifact</text>
+
+    <rect x="820" y="170" width="300" height="110" rx="16" fill="#f8fafc" stroke="#cbd5e1"/>
+    <text class="t b" x="850" y="215">Critique</text>
+    <text class="t s" x="850" y="245">find gaps & assumptions</text>
+
+    <rect x="440" y="350" width="300" height="110" rx="16" fill="#f8fafc" stroke="#cbd5e1"/>
+    <text class="t b" x="470" y="395">Revise</text>
+    <text class="t s" x="470" y="425">apply fixes & tighten spec</text>
+
+    <rect x="820" y="350" width="300" height="110" rx="16" fill="#f0fdf4" stroke="#86efac"/>
+    <text class="t b" x="850" y="395">Verify</text>
+    <text class="t s" x="850" y="425">build · test · lint · check</text>
+
+    <rect x="440" y="530" width="680" height="120" rx="16" fill="#eff6ff" stroke="#93c5fd"/>
+    <text class="t b" x="470" y="580">Output</text>
+    <text class="t s" x="470" y="610">artifact + proof (logs / build output / test report)</text>
+  </g>
+
+  <!-- Arrows -->
+  <path d="M 360 225 L 440 225" stroke="#334155" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 740 225 L 820 225" stroke="#334155" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 970 280 L 970 350" stroke="#334155" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 820 405 L 740 405" stroke="#334155" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 590 460 L 590 530" stroke="#334155" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 970 460 L 970 530" stroke="#334155" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- Fail loop -->
+  <path d="M 1120 405 C 1165 405, 1165 225, 740 225" stroke="#ef4444" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+  <text class="t s" x="1020" y="325" fill="#ef4444" opacity="0.85">fail → loop</text>
+</svg>
