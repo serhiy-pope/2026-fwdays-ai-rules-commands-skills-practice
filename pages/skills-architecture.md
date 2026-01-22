@@ -8,7 +8,11 @@ background: /images/bg-paper-grid.svg
 
 How to make “skills” concrete: treat them like a small system with inputs, loops, and verification.
 
-<div class="mt-6 text-sm">
+<div class="mt-6 text-sm frame p-4">
+<div class="badge mb-3 text-xs">
+  <span class="i-carbon:information icon text-base" aria-hidden="true" />
+  <span>System view</span>
+</div>
 <ul>
   <li><b>Inputs</b>: context + constraints + tools</li>
   <li><b>Process</b>: attempt → critique → revise</li>
@@ -21,7 +25,7 @@ How to make “skills” concrete: treat them like a small system with inputs, l
 <img
   src="/images/skills-architecture-flow.svg"
   alt="Flow diagram: Inputs lead into Attempt, Critique, Revise, Verify, producing Output. Verify loops back to Attempt on failure."
-  class="w-full rounded border bg-white/85 p-2"
+  class="w-full frame p-3"
 />
 
 :::

@@ -12,7 +12,7 @@ This deck includes **one generated image** to illustrate the core triad:
 - **Commands**: actions
 - **Skills**: practice loops
 
-<div class="mt-6 text-sm opacity-80">
+<div class="mt-6 text-sm opacity-80 frame frame--subtle p-4">
 This image is stored locally under <code>public/images/</code> to keep the deck reliable offline.
 </div>
 
@@ -21,7 +21,7 @@ This image is stored locally under <code>public/images/</code> to keep the deck 
 <img
   src="/images/rules-commands-skills-triad.svg"
   alt="A triangular diagram connecting Rules, Commands, and Skills, with short labels explaining each concept."
-  class="w-full rounded border"
+  class="w-full frame p-3"
 />
 
 :::

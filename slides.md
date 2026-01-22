@@ -12,9 +12,26 @@ background: /images/bg-aurora-light.svg
 
 <div class="text-center">
 
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border bg-white/70 backdrop-blur text-sm">
+  <span class="i-carbon:checkmark text-lg" aria-hidden="true" />
+  <span>Reliable AI workflows</span>
+  <span class="opacity-50">·</span>
+  <span class="i-carbon:cics-program text-lg" aria-hidden="true" />
+  <span>Repeatable commands</span>
+  <span class="opacity-50">·</span>
+  <span class="i-carbon:pen text-lg" aria-hidden="true" />
+  <span>Practice skills</span>
+</div>
+
 ## AI Rules, Commands, Skills
 
 ### Practice workshop (Slidev)
+
+<img
+  src="/images/rules-commands-skills-triad.svg"
+  alt="A triangular diagram connecting Rules, Commands, and Skills, with short labels explaining each concept."
+  class="mx-auto mt-8 w-80 frame p-4"
+/>
 
 <div class="mt-10 text-sm opacity-80">
 Use <kbd>Space</kbd> / <kbd>→</kbd> to advance · <kbd>Shift</kbd>+<kbd>Space</kbd> / <kbd>←</kbd> to go back
@@ -36,6 +53,34 @@ Repo: <code class="text-gray-700">2026-fwdays-ai-rules-commands-skills-practice<
 :global(.slidev-layout),
 :global(.slidev) {
   cursor: none !important;
+}
+
+.frame {
+  border: 1px solid rgba(15, 23, 42, 0.18);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
+  backdrop-filter: blur(6px);
+}
+
+.frame--subtle {
+  background: rgba(255, 255, 255, 0.65);
+  box-shadow: 0 8px 20px rgba(2, 6, 23, 0.06);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border: 1px solid rgba(15, 23, 42, 0.18);
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.icon {
+  display: inline-block;
+  vertical-align: -0.2em;
 }
 </style>
 
@@ -92,7 +137,13 @@ level: 2
 
 ## Table of contents
 
-<Toc text-sm minDepth="1" maxDepth="2" />
+<div class="frame frame--subtle p-5 max-w-3xl mx-auto">
+  <div class="badge mb-4 text-sm">
+    <span class="i-carbon:list-boxes icon text-lg" aria-hidden="true" />
+    <span>Navigate</span>
+  </div>
+  <Toc text-sm minDepth="1" maxDepth="2" />
+</div>
 
 <!--
 - Use TOC for navigation when questions jump around.
@@ -124,7 +175,7 @@ Rules should be:
 - **Prioritized** (what wins when rules conflict?)
 - **Grounded** (tools/data boundaries are explicit)
 
-<div v-click class="mt-6 p-3 border rounded text-sm">
+<div v-click class="mt-6 frame p-4 text-sm">
 Rule template:
 <br>
 <code>When &lt;context&gt;, you must &lt;behavior&gt;. Never &lt;forbidden&gt;. If uncertain, &lt;fallback&gt;.</code>
@@ -197,7 +248,7 @@ Pick one:
 - Refactor helper
 - Incident debugging partner
 
-<div v-click class="mt-6 p-3 border rounded text-sm">
+<div v-click class="mt-6 frame p-4 text-sm">
 Deliverable: 3 rules with a measurable fallback (e.g., “ask a question”, “show options”, “run build”).
 </div>
 
@@ -338,16 +389,25 @@ background: /images/bg-paper-grid.svg
 ## Skill loop: attempt → critique → revise
 
 <div class="grid grid-cols-3 gap-4 mt-8 text-center">
-  <div class="p-4 border rounded" v-click>
-    <div class="font-bold">Attempt</div>
+  <div class="frame frame--subtle p-4" v-click>
+    <div class="flex items-center justify-center gap-2 font-bold">
+      <span class="i-carbon:play icon text-xl opacity-90" aria-hidden="true" />
+      <span>Attempt</span>
+    </div>
     <div class="text-sm opacity-80">Do the task with constraints</div>
   </div>
-  <div class="p-4 border rounded" v-click>
-    <div class="font-bold">Critique</div>
+  <div class="frame frame--subtle p-4" v-click>
+    <div class="flex items-center justify-center gap-2 font-bold">
+      <span class="i-carbon:information icon text-xl opacity-90" aria-hidden="true" />
+      <span>Critique</span>
+    </div>
     <div class="text-sm opacity-80">Find gaps, risks, assumptions</div>
   </div>
-  <div class="p-4 border rounded" v-click>
-    <div class="font-bold">Revise</div>
+  <div class="frame frame--subtle p-4" v-click>
+    <div class="flex items-center justify-center gap-2 font-bold">
+      <span class="i-carbon:renew icon text-xl opacity-90" aria-hidden="true" />
+      <span>Revise</span>
+    </div>
     <div class="text-sm opacity-80">Fix + verify</div>
   </div>
 </div>
@@ -373,7 +433,7 @@ Good specs include:
 - **Constraints**
 - **Acceptance criteria**
 
-<div v-click class="mt-6 p-3 border rounded text-sm">
+<div v-click class="mt-6 frame p-4 text-sm">
 If you can’t write acceptance criteria, you can’t reliably evaluate the model’s output.
 </div>
 
@@ -421,7 +481,7 @@ Vague ask:
 
 > “Make these slides better.”
 
-<div v-click class="mt-6 p-3 border rounded text-sm">
+<div v-click class="mt-6 frame p-4 text-sm">
 Rewrite as:
 <br>
 <code>/make-slides</code> + 3 rules + acceptance criteria
